@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Sparkles } from "lucide-react";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
+
 const Register = () => {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const navigate = useNavigate();
@@ -12,7 +14,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch(`${BASE_URL}/api/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),

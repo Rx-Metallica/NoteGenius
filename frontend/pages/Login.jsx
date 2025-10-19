@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Sparkles } from "lucide-react";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
+
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const navigate = useNavigate();
@@ -12,7 +14,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(`${BASE_URL}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -101,7 +103,10 @@ const Login = () => {
         {/* Link */}
         <p className="text-sm text-gray-600 mt-5">
           Need an account?{" "}
-          <Link to="/register" className="text-purple-600 hover:underline font-medium">
+          <Link
+            to="/register"
+            className="text-purple-600 hover:underline font-medium"
+          >
             Sign up
           </Link>
         </p>
