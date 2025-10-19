@@ -77,10 +77,10 @@ export default function Notes() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-white">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-purple-50 via-indigo-50 to-white">
       <Navbar />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
@@ -193,6 +193,19 @@ export default function Notes() {
         onSave={fetchNotes}
         onUpdate={handleUpdateNote}
       />
+
+      {/* Footer */}
+      <footer className="w-full py-6 text-center text-gray-500 text-sm">
+        Created by <span className="text-red-500">❤️</span> by{" "}
+        <a
+          href="https://moteaditya.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-purple-600 hover:underline"
+        >
+          Aditya Mote
+        </a>
+      </footer>
     </div>
   );
 }
