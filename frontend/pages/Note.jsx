@@ -196,7 +196,7 @@ export default function Notes() {
 
       {/* Footer */}
       <footer className="w-full py-6 text-center text-gray-500 text-sm">
-        Created by <span className="text-red-500">❤️</span> by{" "}
+        Created by <span className="text-red-500">❤️</span>{" "}
         <a
           href="https://moteaditya.vercel.app/"
           target="_blank"
